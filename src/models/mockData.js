@@ -14,7 +14,7 @@ export const companies = [
 export const employees = [
     {
         id: "emp_001",
-        companyId: "comp_001", // 🔑 Foreign key relationship
+        companyId: "comp_001", // FK
 
         firstName: "Jane",
         lastName: "Doe",
@@ -23,7 +23,7 @@ export const employees = [
         employmentType: "SALARIED", // or "HOURLY"
 
         compensation: {
-            // 💡 polymorphic pay structure
+
             annualSalary: 120000,
             hourlyRate: null,
         },

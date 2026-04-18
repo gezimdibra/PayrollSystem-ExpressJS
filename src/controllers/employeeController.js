@@ -19,6 +19,13 @@ export const addEmployee = (req,res) => {
         const { companyId } = req.params;
         const employeeData = req.body;
 
+        if(!employeeData.firstName){
+            return res.status(404).json({message: "Missing Employee First Name"});
+        }
+        if(!employeeData.employmentType){
+            return res.status(404).json({message: "Missing Employee Employment Type"});
+        }
+
         const newEmployee = employeeService.addEmployee(companyId, employeeData);
 
         if (!newEmployee) {
